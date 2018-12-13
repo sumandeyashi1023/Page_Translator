@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/png" href="logo.png">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<title>Multiple_Language_Using_Jquery_Json</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		var arrLang = {
+
+			'en' : {
+				'home' : 'Home',
+				'about' : 'About Us',
+				'enquery': 'Enquery Form',
+				'notice':'Notice',
+				'contact' : 'Contact Us',
+				'faq': 'Faqs'
+			},
+
+			'hindi' : {
+				'home' : 'होम',
+				'about' : 'हमारे बारे में',
+				'enquery': 'पूछताछ फार्म',
+				'notice':'नोटिस',
+				'contact' : 'हमसे संपर्क करें',
+				'faq': 'पूछे जाने वाले प्रश्न'
+			},
+
+			'bengali' : {
+				'home' : 'বাড়ি',
+				'about' : 'আমাদের সম্পর্কে',
+				'enquery': 'ইনকয়েরি ফরম',
+				'notice':'বিজ্ঞপ্তি',
+				'contact' : 'আমাদের সাথে যোগাযোগ করুন',
+				'faq': 'প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী'
+			}
+		};
+
+        $(function(){
+          
+         $('.translate').click(function(){
+         	var lang = $(this).attr('id');
+
+         	$('.lang').each(function(index, element){
+            $(this).text(arrLang[lang][$(this).attr('key')]);
+         	});
+         });
+        });
+
+	</script>
+</head>
+<body  style="background-image:url('bg1.png'); background-repeat: no-repeat; background-size: 1330px;">
+	<br><br>
+
+        <div class="conatainer-wrapper">
+	          <button class="translate" id="en">English</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	          <button class="translate" id="hindi">Hindi</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	          <button class="translate" id="bengali">Bengali</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    
+<br><br>
+
+	<div class="conatainer-wrapper1">
+	   <ul class="line">
+		  <li class="lang" key="home">Home</li>
+		  <li class="lang" key="about">About Us</li>
+		  <li class="lang" key="enquery">Enquery Form</li>
+		  <li class="lang" key="notice">Notice</li>
+		  <li class="lang" key="contact">Contact Us</li>
+		  <li class="lang" key="faq">Faqs</li>
+	  </ul>
+    </div>
+
+</body>
+</html>
